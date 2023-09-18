@@ -1,0 +1,1733 @@
+:root{
+    --header_height: 60px;
+    --color_top_contouring: #3c3c3c;
+    --colot_button: #2a2a2a;
+    --colot_button_hover: #1d1d1d;
+    --color_background_inputs: #dcdcdc;
+    --color_button_bright: #828282;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Light.ttf');
+}
+@keyframes animation_height {
+    from{
+        height: 0;
+        padding: 0px;
+    }
+    to{
+        padding: 10px;
+        height: 230px;
+    }
+}
+@keyframes animation_opacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes animation_height_close {
+    from{
+        height: 230px;
+        padding: 10px;
+    }
+    to{
+        height: 0;
+        padding: 0px;
+    }
+}
+@keyframes animation_opacity_close {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+body, html{
+    font-family: 'Poppins';
+    margin: 0;
+    background-color: #2a2a2a;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+
+
+/*Estilos del Login*/
+#back_login{
+    background-image: url("../assets/header/estructura-abstracta-3d-gris-oscuro_1280x720_3593.webp");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+}
+#div_login_left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+#div_login_right{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+#box_login_left{
+    display: block;
+}
+#login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_top_contouring);
+    width: 400px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    float: left;
+}
+#form_login{
+    display: inline-block;
+    text-align: center;
+}
+.login_label{
+    color: white;
+    margin: 5px 0 5px 0;
+}
+#logo_login{
+    color: white;
+    font-size: 65px;
+    margin: 0 0 0 0;
+}
+#paragraph_login{
+    color: white;
+    font-size:x-large;
+}
+
+
+
+/*Estilos del Registro*/
+#div_register_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+#register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_top_contouring);
+    width: 400px;
+    height: 710px;
+    padding: 15px;
+    border-radius: 10px;
+}
+#form_register{
+    display: inline-block;
+    text-align: center;
+}
+#title_register{
+    color: white;
+    margin: 0 0 0 0;
+    font-size: x-large;
+}
+#sentence_register{
+    color: white;
+    margin: 5px 0 10px 0;
+    font-size: small;
+    box-shadow: 0px 0.5px 0px white;
+}
+#label_foto{
+    background-color: var(--color_background_inputs);
+    font-size: medium;
+    text-align: center;
+    width: 300px;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    display: inline-block;  
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#fullFoto{
+    display: none;
+}
+
+
+
+/*Estilos del Perfil*/
+#main_perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--header_height));
+}
+#form_perfil{
+    display: inline-block;
+    text-align: center;
+    background-color: var(--color_top_contouring);
+    width: 700px;
+    height: 325px;
+    padding: 15px;
+    border-radius: 10px;
+}
+#div_foto_perfil{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 210px;
+    top: -50%;
+    margin: 0 0 10px 0;
+    box-shadow: 0px 0.5px 0px white;
+}
+#div_bottom_perfil{
+    display: block;
+    position: relative;
+    width: 100%;
+    top: -50%
+}
+#fullFoto_perfil{
+    position: absolute;
+    opacity: 0;
+    width: 150px;
+    height: 150px;
+    right: 3%;
+    top: 4%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+#div_grid_perfil{
+    display: grid;
+    position: relative;
+    grid-template-columns: 350px 350px;
+    top: -50%;
+}
+#div_foto_perfil h2{
+    display: block;
+    color: white;
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+#div_foto_perfil_background{
+    background-color: var(--color_top_contouring);
+    position: relative;
+    margin: auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+}
+#foto_perfil_change{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    right: 3%;
+    top: 4%;
+}
+#div_bottom_perfil a{
+    display: block;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+
+
+/*Estilos del Recuperar Contraseña*/
+#form_change_password{
+    display: inline-block;
+    background-color: var(--color_top_contouring);
+    width: 400px;
+    height: 290px;
+    padding: 15px;
+    border-radius: 10px;
+}
+#div_foto_change_password{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 210px;
+    top: -55%;
+    margin: 0 0 10px 0;
+    box-shadow: 0px 0.5px 0px white;
+}
+#div_change_password{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -55%;
+}
+#div_foto_change_password h2{
+    display: block;
+    color: white;
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+
+
+/* Header del documento*/
+#main-header {
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+	background: var(--color_top_contouring);
+	height: var(--header_height);
+    width: 100%;
+    box-shadow: 0 0.3px white;
+}
+#main-header a {
+    text-decoration: none;
+    color: white;
+}
+#main-header a:hover {
+    color: rgb(255, 255, 255);
+    border-radius: 9px;
+}
+#opciones_header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: var(--header_height);
+}
+#div_logo_header{
+    display: block;
+    float: left;
+    width: 150px;
+    height: var(--header_height);;
+}
+#logo-header {
+    margin: 0 0 0 0;
+	text-decoration: none;
+}
+#usuario-desplegable{
+    position: absolute;
+    float: right;
+    display: flex;
+    margin: 0 10px 0 0;
+    right: 0%;
+}
+#usuario-perfil {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--color_top_contouring);
+    position: absolute;
+    width: 120px;
+    height: 110px;
+    top: 64px;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0px 7px 15px;
+}
+#usuario-perfil_back{
+    display: block;
+    height: 110px;
+}
+#usuario-perfil ul{
+    padding: 0;
+    margin: 0;
+    right: 0;
+    min-width: 100px;
+    width: 100px;
+}
+#usuario-perfil form{
+    padding: 0;
+    margin: 0;
+}
+#logOut {
+    width: 100%;
+    height: 27px;
+    background-color: var(--colot_button);
+    border: 0px;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#logOut:hover {
+    background-color: var(--colot_button_hover); 
+}
+#opciones-perfil {
+    text-decoration: none;
+    color: white;
+}
+#usuario-perfil ul li{
+    background-color: var(--colot_button);
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    padding: 4px;
+    text-align: center;
+    margin: 4px 0 4px 0;
+    border-radius: 7px;
+}
+#usuario-perfil ul li:hover {
+    background-color: var(--colot_button_hover);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 7px;
+}
+#usuario-perfil-UL {
+    height: 110px;
+}
+#usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+#div_mensajes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+#div_mensajes_contorno{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colot_button);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+#div_mensajes_contorno:hover{
+    background-color: var(--colot_button_hover);
+}
+#mensajes {
+    margin: 0 0 0 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+#perfil {
+    margin: 0 0 0 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+/* nav de las opciones*/
+#box_opciones {
+    width: 100%;
+    text-align: center;
+    margin: 25px auto;
+}
+#box_opciones a{
+    padding: 15px;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(128, 118, 219);
+    color: rgb(128, 118, 219);
+}
+#box_opciones a:hover{
+    background-color: rgb(128, 118, 219); 
+    color: white;
+}
+/**/
+#titulo-blog {
+    margin: 0 0 0 0;
+    color: white;
+}
+
+/* Body del documento All Tweets*/
+
+#box_create_tweets{
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 10px;
+}
+#buttom_transition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 5px 0;
+    cursor: pointer;
+}
+#buttom_hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_top_contouring);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    /*border-right: 0.01px solid  white;*/
+}
+#text_hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_top_contouring);
+    color: white;
+    margin: 0 0 0 0;
+    font-weight: bold;
+    width: 0;
+    height: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: width 1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#text_hover_p{
+    opacity: 0;
+    margin: 0 0 0 0;
+    transition: opacity, 0.8s;
+}
+#img_hover{
+    margin: 0 0 0 0;
+    width: 40px;
+    height: 40px;
+}
+#div_create_tweets{
+    background: #3c3c3c;
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
+    height: 230px;
+    border-radius: 10px;
+    max-width: 740px;
+    opacity: 1;
+    animation: animation_height 1s, animation_opacity 2s;
+}
+/*Posicionamiento de los elementos por divs*/
+#div_up_create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#div_down_create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#div_up_left{
+    width: 50%;
+}
+#div_up_right{
+    text-align: center;
+    width: 50%;
+    height: 180px;
+    align-items: center;
+    display: block;
+}
+#div_up_right_image{
+    position: relative;
+    border: black 2px solid;
+    background-color: var(--color_background_inputs);
+    width: 95%;
+    height: 178px;
+    margin: 0 0 0 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+#div_right_create_down{
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+#es_publico_1_create{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-right: 10px;
+}
+#txtMensaje_create_tweets{
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--color_background_inputs);
+    margin: 0;
+    width: 95%;
+    height: 165px;
+    resize: none;
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    border: 2px solid black;
+}
+#chkPublico_create_tweets{
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+#es_publico_1_create{
+    display: inline;
+    margin-top: 10px;
+    margin-right: 0px;
+    float: right;
+    width: 50%;
+}
+#btnCrear{
+    display: inline;
+    background-color: var(--colot_button);
+    color: white;
+    font-family: 'Poppins';
+    width: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    float: right;
+}
+#btnCrear:hover{
+    background-color: var(--colot_button_hover);
+}
+#img_prev{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 31%;
+    left: 43%;
+}
+#fulAdjunto_tweet{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 130px;
+    top: 0%;
+    left: 0%;
+    cursor: pointer;
+}
+#erase_image{
+    background-color: var(--color_button_bright);
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px;
+    top: 3%;
+    left: 92%;
+    border-radius: 100%;
+    border: black 1px solid;
+    cursor: pointer;
+}
+
+/*Estilo del nav de cada tweet*/
+/*Posicionamiento en columnas*/
+#father_colummns_count{
+    margin: 15px 0 0 0;
+    width: 100%;
+    text-align: center;
+}
+#colummns_count{
+    margin:0px auto;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 0px;
+    -moz-column-gap: 10x;
+    column-gap: 0px;
+    width: 1050px;
+}
+.box_all_tweets{
+    margin-bottom: 15px;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px;
+    break-inside: avoid;
+}
+/*Disposición de los tweets*/
+.div_all_tweets{
+    display: block;
+    margin: 0 auto;
+    width: 500px !important;
+    border-radius: 10px;
+}
+/*Posicionamiento de los elementos por divs*/
+.div-up{
+    background-color: var(--color_top_contouring);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+.div-down{
+    background-color: var(--color_button_bright);
+    padding: 15px;
+    width: calc(100% - 30px);
+    display: block;
+    word-break: break-all;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.div-up-left{
+    width: 70%;
+    align-items: center;
+    padding: 0 0 0 10px;
+}
+.div-up-right{
+    align-items: center;
+    width: 30%;
+    padding: 0 10px 0 0;
+}
+.div-down_text{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+/*Estilo Foto*/
+.imgFotoAutor_1{
+    background-color: aliceblue;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+/*Estilo texto usuario*/
+.lblAutor_1{
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    float: left;
+    margin: 0 0 0 10px;
+
+}
+/*EStilo del contenido del tweet*/
+.lblTexto_1{
+    display: flex;
+    text-align: start;
+    color: white;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+/*EStilo de la fecha*/
+.lblFecha_1{
+    color: white;
+    font-family: cursive;
+    font-size: 10px;
+    padding: 0 0 18px 0;
+    float: right;
+}
+.lblImage_1{
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+}
+
+
+
+/* Body del documento My Tweets*/
+
+/*Estilo del nav de cada tweet*/
+#box_My_tweets{
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 10px;
+}
+/*Disposición de los tweets*/
+#div_My_tweets{
+    background: #c8dee9;
+    padding: 10px;
+    margin: 0 auto;
+    width: 600px;
+    height: 190px;
+    border-radius: 10px;
+}
+#div_My_tweets_top{
+    display: flex;
+}
+/*Posicionamiento de los elementos por divs*/
+#div_left_my_tweets{
+    text-align: center;
+    width: 300px;
+    height: 140px;
+    align-items: center;
+    display: block;
+}
+#div_right_my_tweets{
+    text-align: center;
+    width: 300px;
+    height: 140px;
+    align-items: center;
+}
+#div_down_my_tweets{
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+#articulo_1{
+    text-align: end;
+    display: block;
+    margin: 10px;
+    padding-right: 10px;
+}
+#es_publico_1{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-top: -30px;
+    padding-right: 10px;
+}
+#lblPublico_1{
+    text-align: center;
+    display: block;
+    margin: 10px 100px 0 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+/*EStilo del contenido del tweet*/
+#lblTexto_1_my_tweets{
+    text-align: start;
+    padding: 5px;
+    background-color: white;
+    margin: 0;
+    display: block;
+    height: 65px;
+    width: 290px;
+    border-radius: 10px;
+}
+/*EStilo de la fecha*/
+#lblFecha_1_my_tweets{
+    text-align: start;
+    padding: 5px;
+    background-color: aliceblue;
+    margin: 10px;
+    display: block;
+    border-radius: 10px;
+    margin-left: 85px;
+}
+.div_My_tweets_bottom{
+    display: block;
+    position: relative;
+    height: 30px;
+}
+.div_down_my_tweets{
+    display: block;
+    position: relative;
+}
+.form_my_tweets{
+    display: block;
+    position: absolute;
+    background-color: var(--color_top_contouring);
+    width: 140px;
+    height: 120px;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0px 7px 15px;
+    bottom: 0%;
+    right: 36%;
+    top: -125px;
+}
+.div_btnPublicar_1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #264a26;
+    width: 125px;
+    height: 33px;
+    margin: 5px auto 2px auto;
+    border-radius: 7px;
+}
+.div_btnPublicar_1:hover{
+    background-color: #3e853e;
+}
+.div_btnDespublicar_1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #525225;
+    width: 125px;
+    height: 33px;
+    margin: 5px auto 2px auto;
+    border-radius: 7px;
+}
+.div_btnDespublicar_1:hover{
+    background-color: #72722c;
+}
+.div_btnBorrar_1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #622020;
+    width: 125px;
+    height: 33px;
+    margin: 5px auto 2px auto;
+    border-radius: 7px;
+}
+.div_btnBorrar_1:hover{
+    background-color: #8d2626;
+}
+.icon_btnPublicar_1{
+    width: 25px;
+    height: 25px;
+    margin: 0 0 0 10px;
+}
+
+.btnPublicar_1, .btnDespublicar_1{
+    font-family: 'Poppins';
+    background-color: transparent;
+    color: white;
+    width: 90px;
+    height: 33px;
+    padding: 0 4px 0 4px;
+    border: 0px;
+    box-shadow: none;
+    cursor: pointer;
+}
+.btnBorrar_1{
+    font-family: 'Poppins';
+    background-color: transparent;
+    color: white;
+    width: 100px;
+    height: 33px;
+    padding: 0 4px 0 4px;
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: none;
+    cursor: pointer;
+}
+.icon_image_points{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.icon_image_points:hover{
+    background-color: var(--colot_button);
+}
+.image_points{
+    width: 20px;
+    height: 20px;
+}
+.no_registros{
+    font-size: medium;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 40px;
+}
+
+
+
+/* Body del documento My Tweets (Mensajes)*/
+.main_mensajes{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - var(--header_height));
+}
+.paquete_personas{
+    display: block;
+    width: 360px;
+    height: calc(100vh - var(--header_height));
+    box-shadow: 0.3px 0 white;;
+}
+.paquete_chats{
+    display: block;
+    width: 360px;
+}
+.onload_div{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 50px;
+}
+.lista_users{
+    display: none;
+    width: 360px;
+}
+.main_chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 360px);
+    height: calc(100vh - var(--header_height));
+}
+.onload_chat_div{
+    display: none;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 0 0;
+}
+.gif_chat_onload{
+    display: flex;
+    width: 130px;
+    height: 80px;
+    margin: 0 0 0 0;
+}
+.div_title_chat{
+    display: block;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 0.3px white;
+}
+.title_chat{
+    color: white;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+.div_search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 5px);
+    height: 45px;
+}
+.img_search{
+    margin: 4px;
+    width: 20px;
+    height: 20px;
+}
+.form_search_chat{
+    width: calc(100% - 35px);
+}
+.search_chat{
+    display: inline-block;
+    font-family: 'Poppins';
+    font-size: 12px;
+    background-color: var(--color_background_inputs);
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+    border-radius: 10px;
+}
+.search_chat:focus{
+    outline: none;
+}
+.form_paquete_personas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    cursor: pointer;
+}
+.persona_mensajes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 10px);
+    height: 70px;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.persona_mensajes:hover{
+    background-color: var(--color_button_bright);
+}
+.border_image_perfil{
+    position: relative;
+    background-color: var(--color_top_contouring);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.perfil_mensajes {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    top: 3px;
+    left: 2.5px;
+}
+.conteiner_buttom{
+    display: block;
+    width: 250px;
+    height: 70px;
+    margin: 0 0 0 5px;
+}
+.BtnPersona {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 40px;
+    margin: 0 0 0 0;
+    text-align: center; 
+    border: none; 
+    background: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+.div_you{
+    display: flex;
+    width: 100%;
+    height: 30px;
+}
+.last_message{
+    display: flex;
+    font-size: 12px;
+    color: white;
+    width: calc(100% - 28px);
+    height: 30px;
+    margin: 0 0 0 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+.p_you{
+    display: flex;
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    height: 30px;
+    margin: 0 0 0 10px;
+}
+.form_lista_personas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+.lista_personas_chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 10px);
+    height: 50px;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.lista_personas_chat:hover{
+    background-color: var(--color_button_bright);
+}
+.border_image_perfil_filter{
+    position: relative;
+    background-color: var(--color_top_contouring);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.perfil_mensajes_filter{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    top: 3px;
+    left: 2.5px;
+}
+.conteiner_buttom_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    margin: 0 0 0 5px;
+}
+.gif_onload{
+    width: 70px;
+    height: 40px;
+}
+
+
+/* Body del documento Create Mensajes*/
+#box_all_messages_create{
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    min-width: 600px;
+    position: relative;
+}
+/*Disposición de los tweets*/
+#div_all_messages_Create{
+    padding: 0px;
+    margin: 0 0 0 0;
+    width: 100%;
+    min-height: calc(100vh - var(--header_height));
+    display: block;
+}
+#div_title{
+    background-color: var(--header_height);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    min-height: 80px;
+    box-shadow: 0 0.3px white;
+}
+#perfil_chat {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 10px;
+    border-radius: 100%;
+}
+#titulo {
+    color: white;
+    margin: 0 0 0 5px;
+}
+#div_messages_chat {
+    height: calc(100vh - (100px + var(--header_height)));
+    width: 100%;
+    display: block;
+}
+#div_messages_chat_background {
+    height: calc(100% - 60px);
+    width: 100%;
+    overflow: auto;
+}
+#message_group_received{
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+.message_received{
+    max-width: 75%;
+    margin: 2px 0;
+    display: flex;
+}
+.message_received:first-child > .message_received_text{
+    border-top-left-radius: 20px;
+}
+.message_received:last-child > .message_received_text{
+    border-bottom-left-radius: 20px;
+}
+.message_received_text{
+    color: white;
+    padding: 10px;
+    min-height: 20px;
+    background-color: #ce18e6;
+    border-radius: 4px 20px 20px 4px;
+    word-break: break-all;
+}
+#message_group_sent{
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: right;
+    overflow: auto;
+}
+.message_sent{
+    max-width: 75%;
+    display: flex;
+    margin: 2px 0 2px auto;
+}
+.message_sent:first-child > .message_sent_text{
+    border-top-right-radius: 20px;
+}
+.message_sent:last-child > .message_sent_text{
+    border-bottom-right-radius: 20px;
+}
+.message_sent_text{
+    color: white;
+    background-color: #373737;
+    border-radius: 20px 4px 4px 20px;
+    min-height: 20px;
+    padding: 10px;
+    margin-left: auto;
+    word-break: break-all;
+}
+#img_text{
+    width: 300px;
+}
+
+#div_messages_chat_send {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    width: 100%;
+}
+#form_send_message{
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+#div_send_message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 100px);
+    text-align: center;
+    align-items: center;
+    width: calc(100% - 60px);
+    height: 60px;
+
+}
+#txtMensaje_Messages_crear{
+    display: inline-block;
+    font-family: 'Poppins';
+    font-size: 14px;
+    background-color: var(--color_background_inputs);
+    text-align: center;
+    width: 97%;
+    height: 35px;
+    resize: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: none;
+    border-radius: 10px;
+}
+#txtMensaje_Messages_crear:focus{
+    outline: none;
+}
+#div_attached_file{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+#area_button_attached{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+#area_button_attached:hover > #img_button_attached{
+    background-color: var(--colot_button_hover);
+}
+#img_button_attached{
+    margin-top: 8px;
+    margin-left: 12px;
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    border-radius: 20px;
+}
+#fulAdjunto{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+}
+#fulAdjunto:hover{
+    cursor: pointer;
+}
+#button_send{
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 60px;
+    margin: 0;
+    align-items: center;
+}
+#area_button{
+    display: none;
+}
+#area_button:hover > #img_button_send{
+    background-color: rgb(72, 96, 173);
+}
+#img_button_send{
+    margin-top: 13px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 20px;
+}
+#div_bottom_message_create{
+    text-align: center;
+}
+#destinatario{
+    font-weight: bold;
+}
+#cmbDestino {
+    display: inline;
+    width: 350px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(128, 118, 219);
+    color: rgb(128, 118, 219);
+    box-shadow: none;
+    text-align: center;
+}
+#arch_adjunto_crear {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#btnEnviar_message_crear {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+}
+
+
+
+/*Estilos del registro*/
+#forms label{
+    font-weight: bold;
+}
+
+h2{
+    text-align: center;
+}
+#txtNombre, #txtApellido, #txtCorreo,
+#txtDir, #txtNumHijos, #txtUsuario,
+#txtClave, #txtEstCilvil, #txtAnterior,
+#txtNueva, #txtRepetir, #txtCodigo{
+    background-color: var(--color_background_inputs);
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: medium;
+    width: 300px;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    display: inline-block;  
+    border: none;
+    border-radius: 10px;
+}
+#txtNombre, #txtApellido, #txtCorreo,
+#txtDir, #txtNumHijos, #txtUsuario,
+#txtClave, #txtEstCilvil, #txtAnterior,
+#txtNueva, #txtRepetir, #txtCodigo:focus{
+    outline: none;
+}
+#btnRegistrar, #btnCambio, #btnActualizar,
+#btningresar, #btnRecuperar{
+    display: inline;
+    background-color: var(--colot_button);
+    color: white;
+    font-family: 'Poppins';
+    width: 50%;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+#btnRegistrar:hover, #btnCambio:hover, #btnActualizar:hover,
+#btningresar:hover, #btnRecuperar:hover{
+    background-color: var(--colot_button_hover);
+}
+
+
+
+
+/*Estilos Login Validar*/
+
+#box_validate {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+#box_primary {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0px 7px 15px;
+}
+#first_Box {
+    width: 100%;
+    height: 70px;
+    display: block;
+    background-color:rgb(38, 58, 122);
+    border-radius: 5px;
+}
+#title_validate {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    color: white;
+}
+#second_Box {
+    width: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    word-break: break-all;
+}
+#text_warning {
+    margin: 0;
+    padding: 10px;
+}
+#form_warning {
+    margin-top: 5px;
+}
+#continue {
+    width: 30%;
+    background-color: rgb(38, 58, 122);
+    color: white;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#cancel {
+    width: 30%;
+    background-color: rgb(38, 58, 122);
+    color: white;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+/*Estilos Recuperar Contraseña*/
+
+#boxRecovery {
+    background-color:rgb(38, 58, 122);
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    display: block;
+    box-shadow: 0px 7px 15px;
+    border-radius: 5px;
+}
+#textRecovery {
+    color: white;
+    margin: 0;
+    padding: 10px;
+    word-break: keep-all;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1035px){
+
+    /*Estilos Login*/
+    #back_login{
+        display: block;
+        text-align: center;
+    }
+    #div_login_left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30vh;
+    }
+    #div_login_right{
+        display: block;
+        width: 100%;
+        height: 70vh;
+    }
+    #login{
+        margin: auto;
+        float: none;
+    }
+
+
+
+    /*Estilos Registro*/
+    #div_register_right{
+        display: block;
+        width: 100%;
+        height: 70vh;
+    }
+    #register{
+        margin: auto;
+    }
+
+
+    /*Estilos del Recuperar Contraseña*/
+    #recovery_password{
+        margin: auto;
+    }
+
+
+
+    /*Estilos Index*/
+    #colummns_count{
+        margin:0px auto;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-gap: 10x;
+        column-gap: 0px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px){
+
+    /*Estilos Login*/
+    #back_login{
+        display: block;
+        text-align: center;
+    }
+    #div_login_left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30vh;
+    }
+    #div_login_right{
+        display: block;
+        width: 100%;
+        height: 70vh;
+    }
+    #colummns_count{
+        margin:0px auto;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-gap: 10x;
+        column-gap: 0px;
+        width: 100%;
+    }
+    #login{
+        margin: auto;
+        float: none;
+    }
+
+
+
+    /*Estilos Registro*/
+    #div_register_right{
+        display: block;
+        width: 100%;
+        height: 70vh;
+    }
+    #register{
+        margin: auto;
+    }
+
+
+
+    /*Estilos del Recuperar Contraseña*/
+    #recovery_password{
+        margin: auto;
+    }
+
+
+
+    /*Estilos Perfil*/
+    #form_perfil{
+        width: 350px;
+        height: 485px;
+    }
+    #div_foto_perfil{
+        top: -38%;
+    }
+    #div_grid_perfil{
+        grid-template-columns: 350px;
+        top: -38%;
+    }
+    #div_bottom_perfil{
+        top: -38%;
+    }
+
+
+
+    /*Estilos Index*/
+    #div_create_tweets{
+        display: block;
+        width: 500px;
+        height: 227px;
+    }
+
+    #div_left_create{
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        margin: 0 0 2px 0;
+    }
+    #div_center_create{
+        width: 100%;
+        height: 53px;
+        margin: 0 0 10px 0;
+    }
+    #div_right_create{
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 180px;
+        align-items: center;
+        display: block;
+    }
+    #div_right_create_up{
+        width: 70%;
+        height: 130px;
+        margin: 0 0 0 71px;
+    }
+
+    #txtMensaje_create_tweets{
+        display: block;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: var(--color_background_inputs);
+        margin: 0;
+        width: 97%;
+        height: 166px;
+        resize: none;
+        float: right;
+        font-family: 'Roboto', sans-serif;
+        font-size: medium;
+        border: 2px solid black;
+    }
+
+    #chkPublico_create_tweets{
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+    }
+    #es_publico_1_create{
+        width: auto;
+        margin: 15px 0 0 108px;
+    }
+    #img_prev{
+        left: 43%;
+    }
+    #erase_image{
+        left: 93%
+    }
+    #colummns_count{
+        margin:0px auto;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-gap: 10x;
+        column-gap: 0px;
+        width: 100%;
+    }
+    #btnCrear{
+        margin: 10px 0 0 13px
+    }
+}
