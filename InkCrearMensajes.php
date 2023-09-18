@@ -100,7 +100,7 @@
             if(is_string($name_archivo)) {
     
                 //messageDB($conn, $datos["txtMensaje_Messages_crear"], $name_archivo, $_SESSION["usuarioChat"], $_SESSION["id_users"]);
-                //Ingresar mensaje en la DB.
+                //Ingresar mensaje en la db.
                 
             }
         }
